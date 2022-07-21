@@ -25,6 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_103422) do
   create_table "messages_tags", id: false, force: :cascade do |t|
     t.bigint "message_id", null: false
     t.bigint "tag_id", null: false
+    t.index ["message_id", "tag_id"], name: "index_messages_tags_on_message_id_and_tag_id"
+    t.index ["tag_id", "message_id"], name: "index_messages_tags_on_tag_id_and_message_id"
   end
 
   create_table "tags", force: :cascade do |t|

@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users do
-        resources :messages
+        resources :messages do
+          resources :tags, only: %i[create destroy]
+        end
       end
-      resources :tags
+      resources :tags, only: %i[index show]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
