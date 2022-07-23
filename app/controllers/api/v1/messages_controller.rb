@@ -1,19 +1,11 @@
 # frozen_string_literal: true
 
 class Api::V1::MessagesController < ApplicationController
-  before_action :find_user
+  before_action :find_user, except: :index
 
   def index
-    if @user
-      messages = @user.messages
-      render json: messages, status: :ok
-    elsif @user.blank?
-      payload = { error: 'User not found', status: :bad_request }
-      render json: payload, status: :bad_request
-    else
-      payload = { error: 'Something went wrong', status: :unprocessable_entity }
-      render json: payload, status: :unprocessable_entity
-    end
+    messages = Message.all
+    render json: messages, status: :ok
   end
 
   def show

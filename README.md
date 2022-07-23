@@ -16,7 +16,7 @@ As described in the mail.
 >
 > Messages
 > - [x] Het moet mogelijk zijn voor een gebruiker om een bericht aan te maken/aan te passen/te verwijderen
-> - [ ] Het moet mogelijk zijn om een overzicht te krijgen van alle berichten
+> - [x] Het moet mogelijk zijn om een overzicht te krijgen van alle berichten
 > - [x] Het moet mogelijk zijn om een overzicht te krijgen van alle berichten van een gebruiker
 >
 > Tags
