@@ -9,7 +9,9 @@ class Api::V1::UsersController < ApplicationController
     user = User.find_by_id(params[:id])
 
     if user
-      render json: user, status: :ok
+      render json: user,
+             include: { messages: { except: :user_id } },
+             status: :ok
     else
       payload = { error: 'User not found', status: :bad_request }
       render json: payload, status: :bad_request
