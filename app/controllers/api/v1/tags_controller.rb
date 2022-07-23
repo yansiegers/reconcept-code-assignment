@@ -11,7 +11,9 @@ class Api::V1::TagsController < ApplicationController
 
   def show
     if @tag
-      render json: @tag, status: :ok
+      render json: @tag,
+             include: :messages,
+             status: :ok
     else
       payload = { error: 'Tag not found', status: :bad_request }
       render json: payload, status: :bad_request
