@@ -10,14 +10,9 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def show
-    if @tag
-      render json: @tag,
-             include: :messages,
-             status: :ok
-    else
-      payload = { error: 'Tag not found', status: :bad_request }
-      render json: payload, status: :bad_request
-    end
+    render json: @tag,
+           include: :messages,
+           status: :ok
   end
 
   def create
@@ -26,17 +21,14 @@ class Api::V1::TagsController < ApplicationController
     message = find_message
     return message_not_found if message.blank?
 
-    tag = Tag.new(
+    tag_name = tag_params[:name]
+    return unprocessable_entity if tag_name.blank?
+
+    tag = Tag.find_or_create_by(
       name: tag_params[:name]
     )
-
-    if tag.save
-      message.tags << tag
-      render json: tag, status: :ok
-    else
-      payload = { error: 'Something went wrong', status: :unprocessable_entity }
-      render json: payload, status: :unprocessable_entity
-    end
+    message.tags << tag
+    render json: tag, status: :ok
   end
 
   def destroy
@@ -48,8 +40,7 @@ class Api::V1::TagsController < ApplicationController
     if message.tags.delete(@tag)
       render json: @tag, status: :ok
     else
-      payload = { error: 'Something went wrong', status: :unprocessable_entity }
-      render json: payload, status: :unprocessable_entity
+      unprocessable_entity
     end
   end
 
@@ -57,6 +48,7 @@ class Api::V1::TagsController < ApplicationController
 
   def find_tag
     @tag = Tag.find_by_id(params[:id])
+    return tag_not_found unless @tag
   end
 
   def find_user
@@ -79,5 +71,15 @@ class Api::V1::TagsController < ApplicationController
   def message_not_found
     payload = { error: 'Message not found', status: :bad_request }
     render json: payload, status: :bad_request
+  end
+
+  def tag_not_found
+    payload = { error: 'Tag not found', status: :bad_request }
+    render json: payload, status: :bad_request
+  end
+
+  def unprocessable_entity
+    payload = { error: 'Something went wrong', status: :unprocessable_entity }
+    render json: payload, status: :unprocessable_entity
   end
 end
