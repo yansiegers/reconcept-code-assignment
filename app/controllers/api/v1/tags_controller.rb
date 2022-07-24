@@ -6,7 +6,7 @@ class Api::V1::TagsController < ApplicationController
 
   def index
     tags = Tag.all
-    render json: tags, status: :ok
+    render json: tags.to_json(methods: :messages_count), status: :ok
   end
 
   def show

@@ -31,10 +31,9 @@ As described in the mail.
 >
 > - [x] Het moet mogelijk zijn om meerdere tags toe te voegen en te verwijderen van een bericht.
 > - [x] Het moet mogelijk zijn om een overzicht te krijgen van alle berichten die een bepaalde tag hebben
-> - [ ] Het moet mogelijk zijn om een overzicht te krijgen van alle tags en hoe vaak ze gebruikt worden
+> - [x] Het moet mogelijk zijn om een overzicht te krijgen van alle tags en hoe vaak ze gebruikt worden
 
 ## To do
-- [ ] [Append extra data to tags](https://stackoverflow.com/questions/3146980/how-to-append-data-to-json-in-ruby-rails)
 - [ ] Add possibility to add/remove existing tags to posts (PUT request instead of PATCH)
 - [ ] Validations
 
