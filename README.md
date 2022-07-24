@@ -2,7 +2,15 @@
 This is an Ruby on Rails API built for an assignment for Reconcept. The requirements can be found at the bottom. I have used Postman to test the API.
 
 ## To run the project
-This is a normal RoR project so there are no special instructions.
+This is a normal RoR project so there are no special instructions to get the server running. To initiate the database:
+
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
+
+To test the API within Postman there is a [JSON file](Reconcept%20code%20assignment.postman_collection.json) included within this project and can be imported.
 
 ## The assignment
 As described in the mail.
