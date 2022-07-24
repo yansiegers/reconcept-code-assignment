@@ -28,12 +28,11 @@ As described in the mail.
 > - [x] Het moet mogelijk zijn om een overzicht te krijgen van alle berichten van een gebruiker
 >
 > Tags
->
 > - [x] Het moet mogelijk zijn om meerdere tags toe te voegen en te verwijderen van een bericht.
 > - [x] Het moet mogelijk zijn om een overzicht te krijgen van alle berichten die een bepaalde tag hebben
 > - [x] Het moet mogelijk zijn om een overzicht te krijgen van alle tags en hoe vaak ze gebruikt worden
 
-## To do
-
 ## Further implementation
 - Add serializing of data (see [Stack Overflow](https://stackoverflow.com/questions/52508432/rails-4-render-json-with-multiple-objects-and-includes) and [ActiveModelSerializers](https://github.com/rails-api/active_model_serializers/tree/0-10-stable))
+- [ ] Remove tag if no message is connected
+- [ ] Add RSpec to test API
