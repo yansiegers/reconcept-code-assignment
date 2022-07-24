@@ -35,7 +35,6 @@ As described in the mail.
 
 ## To do
 - [ ] Add possibility to add/remove existing tags to posts (PUT request instead of PATCH)
-- [ ] Validations
 
 ## Further implementation
 - Add serializing of data (see [Stack Overflow](https://stackoverflow.com/questions/52508432/rails-4-render-json-with-multiple-objects-and-includes) and [ActiveModelSerializers](https://github.com/rails-api/active_model_serializers/tree/0-10-stable))
