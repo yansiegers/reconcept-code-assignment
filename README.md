@@ -1,5 +1,5 @@
 # README
-This is an Ruby on Rails API built for an assignment for Reconcept. The requirements can be found at the bottom. I have used Postman to test the API.
+This is an Ruby on Rails API built for an assignment for Reconcept. The requirements can be found at the bottom. I have used Postman to test the API. The database design can be found [here](https://dbdiagram.io/d/62d920e70d66c746552045f1).
 
 ## To run the project
 This is a normal RoR project so there are no special instructions to get the server running. To initiate the database:
@@ -34,7 +34,9 @@ As described in the mail.
 > - [ ] Het moet mogelijk zijn om een overzicht te krijgen van alle tags en hoe vaak ze gebruikt worden
 
 ## To do
-- [ ] Add possibility to add/remove existing tags to posts
+- [ ] [Append extra data to tags](https://stackoverflow.com/questions/3146980/how-to-append-data-to-json-in-ruby-rails)
+- [ ] Add possibility to add/remove existing tags to posts (PUT request instead of PATCH)
+- [ ] Validations
 
 ## Further implementation
 - Add serializing of data (see [Stack Overflow](https://stackoverflow.com/questions/52508432/rails-4-render-json-with-multiple-objects-and-includes) and [ActiveModelSerializers](https://github.com/rails-api/active_model_serializers/tree/0-10-stable))
