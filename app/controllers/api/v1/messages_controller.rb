@@ -12,7 +12,9 @@ class Api::V1::MessagesController < ApplicationController
     return user_not_found if @user.blank?
 
     if (message = find_message)
-      render json: message, status: :ok
+      render json: message,
+             include: { tags: { only: %i[id name] } },
+             status: :ok
     else
       payload = { error: 'Message not found', status: :bad_request }
       render json: payload, status: :bad_request
